@@ -6,6 +6,10 @@ public class Fernsehsender {
     String[] sendernamen = new String[senderplaetze];
     int aktuellerSender;
 
+    Fernsehsender(int eingeschaltetMitSender){
+        aktuellerSender = eingeschaltetMitSender;
+    }
+
 
     void zappUp(){
         if(aktuellerSender<senderplaetze) aktuellerSender++;
@@ -17,6 +21,10 @@ public class Fernsehsender {
         else aktuellerSender=senderplaetze;
     }
 
+    void storeSendername(String sendername){
+        sendernamen[aktuellerSender] = sendername;
+    }
+
     void printSendername(){
         System.out.print(sendernamen[aktuellerSender]);
     }
@@ -25,6 +33,7 @@ public class Fernsehsender {
         int i=0;
         while(i<senderplaetze){
             if(sendername.equals(sendernamen[i])) return i;
+            i++;
         }
         return 0;
     }
